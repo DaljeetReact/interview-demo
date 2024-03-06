@@ -128,5 +128,8 @@ body{
     padding: 10px;
 }
 .ant-checkbox-inner, .ant-checkbox-input {
-    transform: scale(1.8)
-  }
+    transform: scale(1.8);
+}
+.ant-table-content .ant-table-thead th.ant-table-cell {
+    background: #FFFFFF ;
+}

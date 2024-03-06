@@ -8,6 +8,9 @@ import Search from "antd/es/transfer/search";
 import { FiFilter } from "react-icons/fi";
 import { IoCalendarOutline } from "react-icons/io5";
 import { BsSend } from "react-icons/bs";
+import { CgSortAz,CgSortZa } from "react-icons/cg";
+import { Link } from "react-router-dom";
+
 const { Text } = Typography;
 interface DataType {
   key: React.Key;
@@ -23,12 +26,15 @@ interface DataType {
 
 const columns: TableColumnsType<DataType> = [
   {
-    title: 'Product Name',
+    title:"Product Name",
     dataIndex: 'name',
     sorter: {
-      compare: (a, b) => a.name - b.name,
-      multiple: 3,
+      multiple: 1,
     },
+    sortIcon: ({ sortOrder }) =>{
+      return  sortOrder =='ascend'?<CgSortAz size={20} />:<CgSortZa size={20}/>;
+    },
+
   },
   {
     title: 'Category',
@@ -103,9 +109,9 @@ const  Inventory = () => {
     <Content>
       <Flex justify="space-between" align="center">
        <Text  style={{ fontSize:18,fontWeight:"normal" }} className="font-color1">Inventory Summary</Text>
-       <Button type="primary" icon={<PlusOutlined />} size={"middle"} className="bg2" style={{borderRadius:10 }}>
-            Add a New Product
-        </Button>
+        <Link to={'add'} className="bg2" style={{borderRadius:10,padding:'10px 20px',color:'#ffffff' }}>
+           <PlusOutlined style={{ fontSize:18,color:'#FFF' }} /> {'  '} Add a New Product
+        </Link>
       </Flex>
 
       <Divider style={{borderColor:'transparent' }}/>
@@ -202,7 +208,7 @@ const  Inventory = () => {
                   </Button>
                 </Flex>
             </Flex>
-            <Divider/>
+            <Divider style={{marginBottom:0}}/>
             <Table rowSelection={rowSelection} columns={columns} dataSource={data} />
           </Card>
         </Col>
