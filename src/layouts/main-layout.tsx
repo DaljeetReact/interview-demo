@@ -1,9 +1,8 @@
-import React, {useState } from 'react';
+import React, {useState,useEffect } from 'react';
 
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Divider, Flex, Layout, Menu, theme } from 'antd';
+import { Breadcrumb, Divider, Flex, Layout, Menu } from 'antd';
 import { Outlet } from 'react-router-dom';
-import { motion } from "framer-motion"
 
 import { RxDashboard } from "react-icons/rx";
 import { SlHandbag } from "react-icons/sl";
@@ -12,12 +11,10 @@ import { BsFolderFill } from "react-icons/bs";
 import { PiChatCircleDots } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 import logo from '../assets/pie-chart.png';
-import Title from 'antd/es/typography/Title';
 import { Typography } from 'antd';
 import HeaderMain from './HeaderMain';
-const { Text } = Typography;
 
-const { Header, Content, Footer, Sider } = Layout;
+const { Content, Footer, Sider } = Layout;
 
 type MenuItem = Required<MenuProps>['items'][number];
 
@@ -57,9 +54,10 @@ const items: MenuItem[] = [
 const MainLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
   const [mode, setThemeMode] = useState<'light' | 'dark'>('light');
-  const {
-    token: { colorBgContainer, borderRadiusLG },
-  } = theme.useToken();
+
+  useEffect(() => {
+    setThemeMode('light')
+  }, [])
 
 
   return (

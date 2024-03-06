@@ -1,4 +1,4 @@
-import { Flex, theme, MenuProps, Dropdown, Space, Typography, Avatar,Breadcrumb, Divider } from 'antd';
+import { Flex, theme, MenuProps, Dropdown, Space, Typography, Avatar} from 'antd';
 import { Header } from "antd/es/layout/layout"
 import { DownOutlined, UserOutlined } from '@ant-design/icons';
 import { FaBell } from "react-icons/fa";
@@ -12,20 +12,13 @@ const HeaderMain: React.FC = () => {
 
     const items: MenuProps['items'] = [
         {
-            label: <a href="https://www.antgroup.com">1st menu item</a>,
+            label: <a href="/">1st menu item</a>,
             key: '0',
         },
         {
-            label: <a href="https://www.aliyun.com">2nd menu item</a>,
+            label: <a href="/">2nd menu item</a>,
             key: '1',
-        },
-        {
-            type: 'divider',
-        },
-        {
-            label: '3rd menu item',
-            key: '3',
-        },
+        }
     ];
 
     return (
