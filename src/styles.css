@@ -22,7 +22,21 @@ body{
 .font-color1{
     color: var(--font-grey);
 }
-
+.bg1{
+    background-color: var(--main-bg-color);
+}
+.bg2{
+    background-color: var(--main-bg-light);
+}
+.bgh1{
+    background-color: var(--hight-color1);
+}
+.bgh2{
+    background-color: var(--hight-color2);
+}
+.p10{
+    padding: 10px;
+}
 /* sidebar css */
 .sidebar-logo-container{
     margin: 10px 0px;
@@ -108,3 +122,11 @@ body{
     border-radius: 6px;
     font-weight: normal;
 }
+/* end Header style */
+/* card block */
+.ant-card .ant-card-body{
+    padding: 10px;
+}
+.ant-checkbox-inner, .ant-checkbox-input {
+    transform: scale(1.8)
+  }
