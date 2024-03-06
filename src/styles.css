@@ -1,7 +1,110 @@
+/* 
+Global Settings
+*/
 *{
     font-family: "Inter", sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
+:root {
+    --font-grey:#45454b;
+    --font-green:#519C66;
+    --main-bg-color: #4355ED;
+    --main-bg-light:#5570F1;
+    --hight-color1:#FFCC91;
+    --hight-color2:#FDF3E5;
 }
 body{
     margin: 0;
     padding: 0;
+    color: var(--font-grey);
+}
+.font-color1{
+    color: var(--font-grey);
+}
+
+/* sidebar css */
+.sidebar-logo-container{
+    margin: 10px 0px;
+}
+.sidebar-logo{
+    height: 38px;
+}
+
+.ant-menu-item svg ,.menu-item-count svg {
+    fill: #41424A;
+    width: 25px;
+    height: 25px;
+}
+.ant-menu-item{
+    font-size: 12px;
+    color: #41424A;
+    height: 50px  !important;
+    position: relative;
+    display: flex;
+    align-content: center;
+}
+.menu-item-count svg{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.ant-menu-item.ant-menu-item-selected{
+    background-color: var(--main-bg-light) !important;
+    color: #FFFFFF !important; 
+    padding: 0px;
+}
+.ant-menu-item.ant-menu-item-selected svg{
+    fill: #FFFFFF;
+}
+.menu-item-count span{
+    position: absolute;
+    right: 10px;
+    top: 15px;
+    height: 20px;
+    width: 20px;
+    font-size: 9px;
+    background-color: var(--hight-color1);
+    border-radius: 50px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.ant-menu-inline-collapsed svg{
+    height: 50px;
+}
+.ant-menu-item.ant-menu-item-selected .menu-item-count span{
+    background-color: #FFFFFF;
+    color: #000;
+}
+/* after collapsed menu */
+.ant-menu-inline-collapsed .ant-menu-item{
+   align-items: center;
+   justify-content: center;
+   display: flex;
+   align-content: center;
+   width: 60px;
+   height: 60px;
+   border-radius: 10px;
+}
+.ant-menu-inline-collapsed .ant-menu-title-content{
+    display: none !important;
+}
+.ant-menu-inline-collapsed .menu-item-count span{
+    top: 5px;
+}
+.ant-menu-inline-collapsed  .ant-menu-item{
+    padding: 0px;
+    margin: 0px auto;
+    margin-bottom: 6px !important;
+}
+/* End After Collapsed menu */
+/* Header */
+#top-header .header-right .user-drop-down{
+    background-color: var(--hight-color2) ;
+    padding: 8px 15px;
+    font-size: 13px;
+    color: var(--font-grey);
+    border-radius: 6px;
+    font-weight: normal;
 }

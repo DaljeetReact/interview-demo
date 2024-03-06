@@ -1,14 +1,21 @@
 import React, {useState } from 'react';
-import {
-  DesktopOutlined,
-  FileOutlined,
-  PieChartOutlined,
-  TeamOutlined,
-  UserOutlined,
-} from '@ant-design/icons';
+
 import type { MenuProps } from 'antd';
-import { Breadcrumb, Layout, Menu, theme } from 'antd';
+import { Breadcrumb, Divider, Flex, Layout, Menu, theme } from 'antd';
 import { Outlet } from 'react-router-dom';
+import { motion } from "framer-motion"
+
+import { RxDashboard } from "react-icons/rx";
+import { SlHandbag } from "react-icons/sl";
+import { HiOutlineUsers } from "react-icons/hi2";
+import { BsFolderFill } from "react-icons/bs";
+import { PiChatCircleDots } from "react-icons/pi";
+import { IoSettingsOutline } from "react-icons/io5";
+import logo from '../assets/pie-chart.png';
+import Title from 'antd/es/typography/Title';
+import { Typography } from 'antd';
+import HeaderMain from './HeaderMain';
+const { Text } = Typography;
 
 const { Header, Content, Footer, Sider } = Layout;
 
@@ -27,44 +34,62 @@ function getItem(
     label,
   } as MenuItem;
 }
+const MenuItemWithCount = (props:{children:React.ReactNode,count:string})=>{
+  return(
+    <div className='menu-item-count'>
+      {props.children}
+      <span>{props.count}</span>
+    </div>
+  );
+}
 
 const items: MenuItem[] = [
-  getItem('Option 1', '1', <PieChartOutlined />),
-  getItem('Option 2', '2', <DesktopOutlined />),
-  getItem('User', 'sub1', <UserOutlined />, [
-    getItem('Tom', '3'),
-    getItem('Bill', '4'),
-    getItem('Alex', '5'),
-  ]),
-  getItem('Team', 'sub2', <TeamOutlined />, [getItem('Team 1', '6'), getItem('Team 2', '8')]),
-  getItem('Files', '9', <FileOutlined />),
+  getItem('Dashboard', '1', <RxDashboard />),
+  getItem('Orders', '2',<MenuItemWithCount children={<SlHandbag />}  count={'30'}/>),
+  getItem('Customers', 'sub1', <HiOutlineUsers />),
+  getItem('Inventory', 'sub2', <BsFolderFill />),
+  getItem('Conversations', '9', <PiChatCircleDots />),
+  getItem('Settings', '10', <IoSettingsOutline />),
 ];
+
+
 
 const MainLayout: React.FC = () => {
   const [collapsed, setCollapsed] = useState(false);
+  const [mode, setThemeMode] = useState<'light' | 'dark'>('light');
   const {
     token: { colorBgContainer, borderRadiusLG },
   } = theme.useToken();
 
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
-        <div className="demo-logo-vertical" />
-        <Menu theme="dark" defaultSelectedKeys={['1']} mode="inline" items={items} />
+      <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}
+      theme={mode}
+      >
+        <Flex className='sidebar-logo-container' align='center' justify='center' gap={10} style={{ padding:'0px 20px', marginBottom:'40px' }} >
+          <img className='sidebar-logo' src={logo} alt='logo'/>
+        </Flex>
+        <Menu
+        theme={mode} defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
+      
       <Layout>
-        <Header style={{ padding: 0, background: colorBgContainer }} />
+        <HeaderMain/>
+        <Divider style={{ margin:0,background:'#fafafa' }}/>
+         <div style={{ padding: '2px 16px',backgroundColor:'#ffffff',  marginBottom:'20px'}}>
+            
+            <Breadcrumb style={{fontSize:12 }} >
+              <Breadcrumb.Item>Home</Breadcrumb.Item>
+              <Breadcrumb.Item>Inventory</Breadcrumb.Item>
+            </Breadcrumb>
+         </div>
+
         <Content style={{ margin: '0 16px' }}>
-          <Breadcrumb style={{ margin: '16px 0' }}>
-            <Breadcrumb.Item>User</Breadcrumb.Item>
-            <Breadcrumb.Item>Bill</Breadcrumb.Item>
-          </Breadcrumb>
           <div
             style={{
-              padding: 24,
-              minHeight: 360,
-              background: colorBgContainer,
-              borderRadius: borderRadiusLG,
+              padding: 0,
+              minHeight: '100vh',
             }}
           >
              <Outlet/>

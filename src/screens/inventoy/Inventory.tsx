@@ -1,10 +1,12 @@
+import { Content } from "antd/es/layout/layout"
+import { Typography } from 'antd';
+const { Text } = Typography;
+
 const  Inventory = () => {
   return (
-    <div>Main Dashboard
-
-      <h1>slkdnlsmlsmdklslm</h1>
-      <button>asòlmk</button>
-    </div>
+    <Content>
+       <Text  style={{ fontSize:20,fontWeight:"normal" }} className="font-color1">Inventory Summery</Text>
+    </Content>
   )
 }
 
