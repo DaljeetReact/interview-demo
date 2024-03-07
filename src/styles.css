@@ -133,3 +133,63 @@ body{
 .ant-table-content .ant-table-thead th.ant-table-cell {
     background: #FFFFFF ;
 }
+/* Starting Form Style */
+.ant-input,.ant-input:focus,.ant-input:hover,.ant-input-number{
+    background-color: #F3F5FA;
+    border-width: 0;
+    padding: 10px 10px;
+    font-size: 18px;
+    font-weight: 300;
+}
+.ant-form-item-control-input-content .ant-select ,.ant-form-item-control-input-content .ant-select-selector{
+    height: auto ;
+    border-radius: 10px;
+}
+.ant-form-item-control-input-content .ant-select .ant-select-selector {
+    background-color: #F3F5FA ;
+    border: 0 ;
+    padding: 10px 10px;
+}
+
+.ant-form-item-control-input-content .ant-select .ant-select-selection-item,
+.ant-form-item-control-input-content .ant-input-number,
+.ant-form-item-control-input-content .ant-picker
+{
+    font-size: 18px;
+    font-weight: 300;
+}
+.ant-form-item,.ant-input-number {
+    width: 100%;
+}
+.ant-form-item-control-input-content .ant-input-number{
+    border: 0px !important;
+}
+.ant-form-item-control-input-content .ant-input-number .ant-input-number-handler-wrap{
+    opacity: 1 !important;
+}
+.ant-form-item-control-input-content .ant-input-number .ant-input-number-handler-wrap{
+    background-color: #F3F5FA ;
+}
+.ant-form-item-control-input-content .ant-input-number .ant-input-number-handler-up,
+.ant-form-item-control-input-content .ant-input-number .ant-input-number-handler-down
+{  
+    background-color: #c1c1c1;
+    margin: 2px;
+}
+
+.ant-form-item-control-input-content .ant-picker{
+    background-color: #F3F5FA ;
+    width: 100%;
+    border: 1px;
+    padding: 15px 10px;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+/* Text Editor Settings */
+
+.mdxeditor {
+    min-height: 200px;
+    border: 1px solid #f3f5f9;
+    border-radius: 10px;
+}
