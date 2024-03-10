@@ -11,8 +11,8 @@ import { BsFolderFill } from "react-icons/bs";
 import { PiChatCircleDots } from "react-icons/pi";
 import { IoSettingsOutline } from "react-icons/io5";
 import logo from '../assets/pie-chart.png';
-import { Typography } from 'antd';
 import HeaderMain from './HeaderMain';
+import { Link } from "react-router-dom";
 
 const { Content, Footer, Sider } = Layout;
 
@@ -40,14 +40,21 @@ const MenuItemWithCount = (props:{children:React.ReactNode,count:string})=>{
   );
 }
 
+const AddLink =(props:{label:string,linkto:string})=>(
+  <Link to={props.linkto}>
+      {props.label}
+  </Link>
+)
+
 const items: MenuItem[] = [
   getItem('Dashboard', '1', <RxDashboard />),
   getItem('Orders', '2',<MenuItemWithCount children={<SlHandbag />}  count={'30'}/>),
   getItem('Customers', 'sub1', <HiOutlineUsers />),
-  getItem('Inventory', 'sub2', <BsFolderFill />),
+  getItem(<AddLink  label='Inventory' linkto='/inventory' />, 'sub2', <BsFolderFill />),
   getItem('Conversations', '9', <PiChatCircleDots />),
   getItem('Settings', '10', <IoSettingsOutline />),
 ];
+
 
 
 
