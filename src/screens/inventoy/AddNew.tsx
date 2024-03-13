@@ -1,6 +1,28 @@
 import { Content } from "antd/es/layout/layout";
-import {  Button, Form, Input,  message,UploadFile, Upload, GetProp, UploadProps,Select,Switch, Space,InputNumber, Divider, Row, Col, Flex, Typography, Card, DatePicker, TimePicker, Avatar, Modal } from "antd";
-import { CloudUploadOutlined, DeleteOutlined, DownOutlined ,LoadingOutlined, PlusOutlined } from "@ant-design/icons";
+import {
+  Button,
+  Form,
+  Input,
+  message,
+  UploadFile,
+  Upload,
+  GetProp,
+  UploadProps,
+  Select,
+  Switch,
+  InputNumber,
+  Divider,
+  Row,
+  Col,
+  Flex,
+  Typography,
+  Card,
+  DatePicker,
+  TimePicker,
+  Avatar,
+  Modal,
+} from "antd";
+import { CloudUploadOutlined, DeleteOutlined, DownOutlined, LoadingOutlined } from "@ant-design/icons";
 
 import '@mdxeditor/editor/style.css';
 import { MDXEditor, UndoRedo, BoldItalicUnderlineToggles, toolbarPlugin } from '@mdxeditor/editor'

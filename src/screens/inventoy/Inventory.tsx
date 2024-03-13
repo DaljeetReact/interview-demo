@@ -84,16 +84,16 @@ for (let i = 0; i < 46; i++) {
 
 const  Inventory = () => {
   const [selectedRowKeys, setSelectedRowKeys] = useState<React.Key[]>([]);
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const start = () => {
-    setLoading(true);
-    // ajax request after empty completing
-    setTimeout(() => {
-      setSelectedRowKeys([]);
-      setLoading(false);
-    }, 1000);
-  };
+  // const start = () => {
+  //   setLoading(true);
+  //   // ajax request after empty completing
+  //   setTimeout(() => {
+  //     setSelectedRowKeys([]);
+  //     setLoading(false);
+  //   }, 1000);
+  // };
 
   const onSelectChange = (newSelectedRowKeys: React.Key[]) => {
     console.log('selectedRowKeys changed: ', newSelectedRowKeys);
