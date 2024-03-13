@@ -66,9 +66,7 @@ const MainLayout: React.FC = () => {
     setThemeMode('light')
   }, [])
 
-  const onClick: MenuProps['onClick'] = (e) => {
-    //console.log('click ', e);
-  };
+
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
@@ -79,7 +77,6 @@ const MainLayout: React.FC = () => {
           <img className='sidebar-logo' src={logo} alt='logo'/>
         </Flex>
         <Menu
-        onClick={onClick}
         theme={mode} defaultSelectedKeys={['1']} mode="inline" items={items} />
       </Sider>
       
